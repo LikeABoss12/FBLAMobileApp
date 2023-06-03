@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'homepage.dart';
 
 void main() {
   runApp(CalendarApp());
@@ -57,7 +58,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
           IconButton(
             icon: Icon(Icons.home),
             onPressed: () {
-              // Perform home action here
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),
+              );
             },
           ),
         ],
