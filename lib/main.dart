@@ -11,7 +11,7 @@ class CalendarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calendar App',
+      title: 'BHS Official',
       home: CalendarScreen(),
     );
   }
@@ -48,8 +48,22 @@ class _CalendarScreenState extends State<CalendarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('School Calendar'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Center(child: Text('School Calendar'),),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {
+              // Perform home action here
+            },
+          ),
+        ],
       ),
+
+
       body: Stack(
         children: [
           Positioned.fill(
