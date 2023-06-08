@@ -1,103 +1,109 @@
-// sanath work
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
-  runApp(EmailContactApp());
+  runApp(ContactPageApp());
 }
 
-class EmailContactApp extends StatelessWidget {
+class ContactPageApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Email/Contact App',
+      title: 'Contact Administration',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
-      home: HomePage(),
+      home: ContactPage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
+class ContactPage extends StatelessWidget {
+  void _sendEmail(BuildContext context) async {
+    final Uri params = Uri(
+      scheme: 'mailto',
+      path: 'admin@example.com',
+      query: 'subject=Hello%20from%20Contact%20Page',
+    );
 
-class _HomePageState extends State<HomePage> {
-  List<String> emails = [];
-  List<String> contacts = [];
+    final String url = params.toString();
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController contactController = TextEditingController();
-
-  void sendEmail() {
-    setState(() {
-      String email = emailController.text;
-      emails.add(email);
-      emailController.clear();
-    });
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Could not launch email'),
+        ),
+      );
+    }
   }
 
-  void saveContact() {
-    setState(() {
-      String contact = contactController.text;
-      contacts.add(contact);
-      contactController.clear();
-    });
+  void _makeCall() async {
+    final Uri params = Uri(
+      scheme: 'tel',
+      path: '8323346423',
+    );
+
+    final String url = params.toString();
+
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    } else {
+      print('Could not launch phone');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Email/Contact App'),
+        title: Text('Contact Administration'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {
+              // Perform home button action
+            },
+          ),
+        ],
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
+      body: Container(
+        color: Colors.orange,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                labelText: 'Enter email',
+            ListTile(
+              onTap: () => _makeCall(),
+              leading: Icon(Icons.phone),
+              title: Text(
+                'Call',
+                style: TextStyle(color: Colors.white),
               ),
             ),
-            ElevatedButton(
-              onPressed: sendEmail,
-              child: Text('Send Email'),
-            ),
-            SizedBox(height: 16.0),
-            TextField(
-              controller: contactController,
-              decoration: InputDecoration(
-                labelText: 'Enter contact',
+            ListTile(
+              onTap: () => _sendEmail(context),
+              leading: Icon(Icons.email),
+              title: Text(
+                'Email',
+                style: TextStyle(color: Colors.white),
               ),
             ),
-            ElevatedButton(
-              onPressed: saveContact,
-              child: Text('Save Contact'),
-            ),
-            SizedBox(height: 16.0),
-            Text('Emails:'),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: emails.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(emails[index]),
-                );
+            ListTile(
+              onTap: () {
+                // Perform appointment action
               },
-            ),
-            SizedBox(height: 16.0),
-            Text('Contacts:'),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: contacts.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(contacts[index]),
-                );
-              },
+              leading: Icon(Icons.calendar_today),
+              title: Text(
+                'Make an Appointment',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),
