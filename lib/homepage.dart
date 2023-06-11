@@ -76,8 +76,8 @@ class HomePage extends StatelessWidget {
             children: [
               CircularButton(
                 color: Colors.yellow,
-                icon: Icons.favorite,
-                label: 'Favorites',
+                icon: Icons.calendar_month_outlined,
+                label: 'Calendar',
               ),
               CircularButton(
                 color: Colors.orange,
@@ -90,8 +90,8 @@ class HomePage extends StatelessWidget {
                 },
                 child: CircularButton(
                   color: Colors.purple,
-                  icon: Icons.calendar_today,
-                  label: 'Appointment',
+                  icon: Icons.photo_album_outlined,
+                  label: 'Photos',
                 ),
               ),
             ],
