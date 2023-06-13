@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, use_build_context_synchronously, prefer_const_constructors, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 

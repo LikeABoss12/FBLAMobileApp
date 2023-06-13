@@ -1,4 +1,6 @@
 // amar look at this
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, duplicate_ignore, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -8,6 +10,7 @@ void main() {
   runApp(CalendarApp());
 }
 
+// ignore: use_key_in_widget_constructors
 class CalendarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,8 +21,10 @@ class CalendarApp extends StatelessWidget {
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class CalendarScreen extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _CalendarScreenState createState() => _CalendarScreenState();
 }
 
