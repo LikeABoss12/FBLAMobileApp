@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "52742383779",
+    "project_id": "fblamobileapp-41ae5",
+    "storage_bucket": "fblamobileapp-41ae5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52742383779:android:77d08fae15b888bb223716",
+        "android_client_info": {
+          "package_name": "com.example.calendar_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52742383779-cbvtdnv7pqu0v78pu5dq8qh9bcodisqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfCya7dLMEurFk7rS7wiCQhpAJnvd-O3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52742383779-cbvtdnv7pqu0v78pu5dq8qh9bcodisqo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "52742383779-rclfv0ugvq5uv0le60paf1addh3cclr8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.calendarApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

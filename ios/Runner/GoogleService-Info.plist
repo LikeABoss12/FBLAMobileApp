@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>52742383779-rclfv0ugvq5uv0le60paf1addh3cclr8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.52742383779-rclfv0ugvq5uv0le60paf1addh3cclr8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBnOq_2GRA029nob_qATMYJBd7aeSDhod8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>52742383779</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.calendarApp</string>
+	<key>PROJECT_ID</key>
+	<string>fblamobileapp-41ae5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fblamobileapp-41ae5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:52742383779:ios:ca4bcf7fd863a068223716</string>
+</dict>
+</plist>
