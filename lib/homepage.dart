@@ -86,15 +86,10 @@ class HomePage extends StatelessWidget {
                 icon: Icons.settings,
                 label: 'Settings',
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/appointment');
-                },
-                child: CircularButton(
-                  color: Colors.purple,
-                  icon: Icons.photo_album_outlined,
-                  label: 'Photos',
-                ),
+              CircularButton(
+                color: Colors.purple,
+                icon: Icons.photo_album_outlined,
+                label: 'Photos',
               ),
             ],
           ),
@@ -130,20 +125,13 @@ class HomePage extends StatelessWidget {
                         title: Text('Email School'),
                       ),
                     ),
-                    PopupMenuItem<String>(
-                      value: 'appointment',
-                      child: ListTile(
-                        leading: Icon(Icons.calendar_today),
-                        title: Text('Book Appointment'),
-                      ),
-                    ),
                   ];
                 },
                 onSelected: (value) {
                   if (value == 'call') {
-                    launchUrlString('tel:+123456789'); // Replace with the actual phone number
+                    launchUrlString('tel:8323497600'); // Replace with the actual phone number
                   } else if (value == 'email') {
-                    launchUrlString('mailto:school@example.com'); // Replace with the actual email address
+                    launchUrlString('mailto:bridgelandhs@cfisd.net'); // Replace with the actual email address
                   } else if (value == 'appointment') {
                     Navigator.pushNamed(context, '/appointment');
                   }
